@@ -1,0 +1,6 @@
+@Lab8_DnilsonAchahuancoHuarilloclla_HostAddress = http://localhost:5170
+
+GET {{Lab8_DnilsonAchahuancoHuarilloclla_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
