@@ -8,6 +8,8 @@ public interface IOrderDetailRepository
     Task<Orderdetail?> GetByIdAsync(int id);
     Task<IEnumerable<Orderdetail>> GetByOrderIdAsync(int orderId);
     Task<int> GetTotalQuantityByOrderIdAsync(int orderId);
+    Task<decimal> GetTotalAmountByOrderIdAsync(int orderId);
+    Task<IEnumerable<Orderdetail>> GetByProductIdAsync(int productId);
     Task<Orderdetail> AddAsync(Orderdetail orderDetail);
     Task UpdateAsync(Orderdetail orderDetail);
     Task DeleteAsync(int id);

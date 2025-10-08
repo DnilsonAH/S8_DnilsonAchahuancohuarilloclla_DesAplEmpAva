@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab8_DnilsonAchahuancoHuarilloclla.Repositories;
 
-
 public class OrderDetailRepository : IOrderDetailRepository
 {
     private readonly LinqExampleContext _context;
@@ -83,6 +82,23 @@ public class OrderDetailRepository : IOrderDetailRepository
             .Include(od => od.Product)
             .Include(od => od.Order)
                 .ThenInclude(o => o.Client)
+            .ToListAsync();
+    }
+
+    public async Task<decimal> GetTotalAmountByOrderIdAsync(int orderId)
+    {
+        return await _context.Orderdetails
+            .Include(od => od.Product)
+            .Where(od => od.OrderId == orderId)
+            .SumAsync(od => od.Quantity * od.Product.Price);
+    }
+
+    public async Task<IEnumerable<Orderdetail>> GetByProductIdAsync(int productId)
+    {
+        return await _context.Orderdetails
+            .Include(od => od.Product)
+            .Include(od => od.Order)
+            .Where(od => od.ProductId == productId)
             .ToListAsync();
     }
 }

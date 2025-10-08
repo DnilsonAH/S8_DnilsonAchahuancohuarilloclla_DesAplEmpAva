@@ -25,4 +25,6 @@ public interface IProductRepository
     
     // Ejercicio 11: Productos vendidos a un cliente específico (LINQ)
     Task<IEnumerable<Product>> GetProductsByClientIdAsync(int clientId);
+    Task<int> GetTotalSoldAsync(int productId);
+    Task<Product?> GetByIdWithDetailsAsync(int id);
 }

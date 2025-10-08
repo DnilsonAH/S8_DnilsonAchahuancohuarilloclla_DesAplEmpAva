@@ -94,4 +94,14 @@ public class ProductRepository : IProductRepository
             .Distinct()
             .ToListAsync();
     }
+
+    public Task<int> GetTotalSoldAsync(int productId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Product?> GetByIdWithDetailsAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -13,4 +13,6 @@ public interface IClientRepository
     Task<IEnumerable<Client>> GetClientsByProductIdAsync(int productId);
     Task UpdateAsync(Client client);
     Task DeleteAsync(int id);
+    Task<int> GetTotalOrdersAsync(int clientId);
+    Task<decimal> GetTotalSpentAsync(int clientId);
 }

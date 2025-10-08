@@ -72,4 +72,9 @@ public class OrderRepository : IOrderRepository
             .ThenInclude(od => od.Product)
             .ToListAsync();
     }
+
+    public Task<object> GetAllWithDetailsAsync()
+    {
+        throw new NotImplementedException();
+    }
 }

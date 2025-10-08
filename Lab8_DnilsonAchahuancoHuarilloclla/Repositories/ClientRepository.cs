@@ -79,4 +79,14 @@ public class ClientRepository : IClientRepository
             // SaveChanges se maneja desde UnitOfWork
         }
     }
+
+    public Task<int> GetTotalOrdersAsync(int clientId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<decimal> GetTotalSpentAsync(int clientId)
+    {
+        throw new NotImplementedException();
+    }
 }

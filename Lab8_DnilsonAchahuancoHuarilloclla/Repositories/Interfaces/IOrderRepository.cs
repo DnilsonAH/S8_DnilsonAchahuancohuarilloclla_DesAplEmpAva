@@ -16,4 +16,5 @@ public interface IOrderRepository
     
     // Métodos adicionales
     Task<IEnumerable<Order>> GetOrdersByClientIdAsync(int clientId);
+    Task<object> GetAllWithDetailsAsync();
 }

@@ -26,3 +26,12 @@ public class ClientWithOrderCountDto
     public string Email { get; set; } = null!;
     public int OrderCount { get; set; }
 }
+
+public class ClientWithOrdersDto
+{
+    public int ClientId { get; set; }
+    public string Name { get; set; } = null!;
+    public string Email { get; set; } = null!;
+    public int TotalOrders { get; set; }
+    public decimal TotalSpent { get; set; }
+}

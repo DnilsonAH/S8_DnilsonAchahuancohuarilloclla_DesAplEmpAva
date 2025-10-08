@@ -4,7 +4,7 @@ public class OrderDto
 {
     public int OrderId { get; set; }
     public int ClientId { get; set; }
-    public string? ClientName { get; set; }
+    public string ClientName { get; set; } = null!;
     public DateTime OrderDate { get; set; }
 }
 
@@ -20,13 +20,11 @@ public class UpdateOrderDto
     public DateTime OrderDate { get; set; }
 }
 
-public class OrderWithDetailsDto
+public partial class OrderWithDetailsDto
 {
     public int OrderId { get; set; }
-    public int ClientId { get; set; }
     public string ClientName { get; set; } = null!;
     public DateTime OrderDate { get; set; }
-    public List<ProductInOrderDto> Products { get; set; } = new();
-       public int TotalQuantity { get; set; }
     public decimal TotalAmount { get; set; }
+    public List<OrderDetailDto> Details { get; set; } = new List<OrderDetailDto>();
 }
